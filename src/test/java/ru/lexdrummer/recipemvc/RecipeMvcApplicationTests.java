@@ -1,0 +1,13 @@
+package ru.lexdrummer.recipemvc;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class RecipeMvcApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
