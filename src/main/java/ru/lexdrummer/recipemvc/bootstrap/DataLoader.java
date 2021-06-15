@@ -72,7 +72,6 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
         UnitOfMeasure tableSpoonUom = tableSpoonUOMOptional.get();
         UnitOfMeasure cupUom = cupUOMOptional.get();
         UnitOfMeasure pinchUom = pinchUOMOptional.get();
-        UnitOfMeasure ounceUom = ounceUOMOptional.get();
         UnitOfMeasure eachUom = eachUOMOptional.get();
         UnitOfMeasure pintUom = pintUOMOptional.get();
 
@@ -116,17 +115,16 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
                 "\n" +
                 "\n" +
                 "Read more: http://www.simplyrecipes.com/recipes/perfect_guacamole/#ixzz4jvoun5ws");
-        guacNotes.setRecipe(recipeOfGuacamole);
         recipeOfGuacamole.setNotes(guacNotes);
 
-        recipeOfGuacamole.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal(12), eachUom, recipeOfGuacamole));
-        recipeOfGuacamole.getIngredients().add(new Ingredient("kosher salt", new BigDecimal(".5"), teaSpoonUom, recipeOfGuacamole));
-        recipeOfGuacamole.getIngredients().add(new Ingredient("fresh lime or lemon juice", new BigDecimal(2), tableSpoonUom, recipeOfGuacamole));
-        recipeOfGuacamole.getIngredients().add(new Ingredient("minced red or thinly sliced green onion", new BigDecimal(2), tableSpoonUom, recipeOfGuacamole));
-        recipeOfGuacamole.getIngredients().add(new Ingredient("serrano chiles, stems and seeds removed, minced", new BigDecimal(2), eachUom, recipeOfGuacamole));
-        recipeOfGuacamole.getIngredients().add(new Ingredient("cilantro", new BigDecimal(2), tableSpoonUom, recipeOfGuacamole));
-        recipeOfGuacamole.getIngredients().add(new Ingredient("freshly grated black pepper", new BigDecimal(2), pinchUom, recipeOfGuacamole));
-        recipeOfGuacamole.getIngredients().add(new Ingredient("ripe tomato, seeds and pulp removed, chopped", new BigDecimal(0.5), eachUom, recipeOfGuacamole));
+        recipeOfGuacamole.addIngredient(new Ingredient("ripe avocados", new BigDecimal(12), eachUom));
+        recipeOfGuacamole.addIngredient(new Ingredient("kosher salt", new BigDecimal(".5"), teaSpoonUom));
+        recipeOfGuacamole.addIngredient(new Ingredient("fresh lime or lemon juice", new BigDecimal(2), tableSpoonUom));
+        recipeOfGuacamole.addIngredient(new Ingredient("minced red or thinly sliced green onion", new BigDecimal(2), tableSpoonUom));
+        recipeOfGuacamole.addIngredient(new Ingredient("serrano chiles, stems and seeds removed, minced", new BigDecimal(2), eachUom));
+        recipeOfGuacamole.addIngredient(new Ingredient("cilantro", new BigDecimal(2), tableSpoonUom, recipeOfGuacamole));
+        recipeOfGuacamole.addIngredient(new Ingredient("freshly grated black pepper", new BigDecimal(2), pinchUom));
+        recipeOfGuacamole.addIngredient(new Ingredient("ripe tomato, seeds and pulp removed, chopped", new BigDecimal(0.5), eachUom));
 
         recipeOfGuacamole.getCategories().add(americanCategory);
         recipeOfGuacamole.getCategories().add(mexicanCategory);
